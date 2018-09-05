@@ -1,5 +1,7 @@
 import { Connection } from './connection';
 import { Control } from './control';
+import { Output } from './output';
+
 import { IO } from './io';
 import { Socket } from './socket';
 
@@ -8,6 +10,7 @@ export class Input extends IO {
     constructor(key: string, title: string, socket: Socket, multiConns: boolean = false) {
         super(key, title, socket, multiConns);
         this.control = null;
+        this.output = null;
     }
 
     hasConnection() {
@@ -23,6 +26,11 @@ export class Input extends IO {
     addControl(control: Control) {
         this.control = control;
         control.parent = this;
+    }
+
+    addOutput(output) {
+        this.output = output;
+        //output.parent = this;
     }
 
     showControl() {
