@@ -1,6 +1,6 @@
 import { Connection } from './connection';
 import { Control } from './control';
-import { Output } from './output';
+// import { Output } from './output';
 
 import { IO } from './io';
 import { Socket } from './socket';
@@ -28,10 +28,10 @@ export class Input extends IO {
         control.parent = this;
     }
 
-    addOutput(output) {
-        this.output = output;
-        //output.parent = this;
-    }
+    // addOutput(output) {
+    //     this.output = output;
+    //     //output.parent = this;
+    // }
 
     showControl() {
         return !this.hasConnection() && this.control !== null;
